@@ -1,0 +1,1 @@
+python -m proxy.pipelines.02_extract_final_urls --db proxy/db/translate_goog_urls.db
