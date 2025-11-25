@@ -15,11 +15,11 @@ import sys
 # collectors.urlscan_collecting에서 collect_and_store 함수를 임포트합니다.
 from collectors.urlscan_collecting_today import collect_from_today_to_db_latest
 from db.init_db import init_db
-from config.api_keys import API_KEYS
+from config.urlscan_api import API_KEYS
 
 # API Key 유효성 검사
 if not API_KEYS:
-    raise RuntimeError("config/api_keys.py 에 최소 1개 이상의 API Key가 필요합니다.")
+    raise RuntimeError("config/urlscan_api.py 에 최소 1개 이상의 API Key가 필요합니다.")
 
 # 수집 개수(페이지/사이즈) 설정
 MAX_PAGES = int(os.getenv("URLSCAN_MAX_PAGES", "1000"))
